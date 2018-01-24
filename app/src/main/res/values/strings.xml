@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">FireCheck</string>
+    <string name="app_name">万顺通消防检查</string>
+    <string name="home">主页</string>
+    <string name="message">消息</string>
+    <string name="workTable">工作台</string>
+    <string name="me">我</string>
 </resources>

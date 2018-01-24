@@ -1,15 +1,11 @@
 package com.wst.firecheck;
-
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -34,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run()
             {
-                String result= Run("http://localhost:54331/test/get");
+                String result= Run("http://10.0.2.2:54331/test/get");
                 Log.d(TAG, "返回结果"+result);
                 handler.sendEmptyMessage(0);
             }
