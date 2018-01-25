@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao' // greenDAO
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -33,4 +33,5 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.9.1'
     compile 'com.alibaba:fastjson:1.2.44'
     compile 'com.alibaba:fastjson:1.1.67.android'
+    compile 'org.greenrobot:greendao:3.2.2'
 }
