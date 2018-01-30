@@ -9,15 +9,21 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.io.IOException;
-
+import android.util.Log;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+import com.alibaba.fastjson.JSON;
+import java.io.IOException;
+import java.util.List;
 import okhttp3.Call;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
+import okhttp3.Callback;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
+    TextView tv;
+    Button me;
     private static final String TAG = "MainActivity";
 
     private GridView gvHome;
@@ -32,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 //        List<String> names= Arrays.asList("peter","anna","mike");
 //        Collections.sort(names,(String a,String b)->{
 //            int i=b.compareTo(a);
@@ -126,4 +133,39 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+        tv=findViewById(R.id.tvapi);
+        me=findViewById(R.id.me);
+        me.setOnClickListener((v)-> {
+            Toast.makeText(MainActivity.this, "你点击了我", Toast.LENGTH_LONG).show();
+        } );
+        String url="http://192.168.0.103:8080/api/values/5";
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                HttpUtil.sendOkHttpRequest(url, new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        String responseData=response.body().string();
+                        showResponse(responseData);
+                    }
+                });
+            }
+        }).start();
+    }
+          private void showResponse(final String response)
+          {
+              runOnUiThread(()-> {
+                    Log.d(TAG, "~"+response+"~");
+                      List<User> userList= JSON.parseArray(response,User.class);//反序列化
+                     for(User u:userList){
+                         Log.d(TAG, Integer.toString(u.getId()));
+                         Log.d(TAG, u.getName());
+                     }
+              });
+          }
 }
