@@ -1,4 +1,4 @@
-package com.wst.firecheck;
+package com.wst.firecheck.utils;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
