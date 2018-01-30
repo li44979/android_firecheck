@@ -1,12 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wst.firecheck.MainActivity">
+    android:orientation="vertical" >
+
+    <!--<TextView-->
+        <!--style="@style/TitleStyle"-->
+        <!--android:text="系统主页" />-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:text="有了手机卫士, 腰不酸了,腿不疼了,走路也有劲了, 手机卫士太NB了"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp" />
+
+    <GridView
+        android:id="@+id/gv_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:numColumns="2"
+        android:verticalSpacing="10dp" >
+    </GridView>
+
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主页"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公告"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工作台"/>
+        <Button
+            android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
@@ -45,41 +87,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="bottom"
-            >
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.5"
-                android:text="@string/home"
-                android:id="@+id/home"
-                />
-            <Button
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/message"
-                android:id="@+id/message"
-                />
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.5"
-                android:id="@+id/workTable"
-                android:text="@string/workTable"
-                />
-            <Button
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id="@+id/me"
-                android:text="@string/me"
-                />
-        </LinearLayout>
+            android:text="我"/>
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
