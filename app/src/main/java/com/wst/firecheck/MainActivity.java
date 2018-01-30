@@ -87,20 +87,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    String Run(String url){
-        OkHttpClient client=new OkHttpClient();
-        try{
-             Request request=new Request.Builder()
-                                .url(url)
-                                .build();
-             Call call=client.newCall(request);
-             Response response=call.execute();
-             return  response.body().string();
-        }catch (IOException ieo){
-            ieo.printStackTrace();
-        }
-        return "";
-    }
 
     class HomeAdapter extends BaseAdapter {
 
@@ -133,30 +119,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-        tv=findViewById(R.id.tvapi);
-        me=findViewById(R.id.me);
-        me.setOnClickListener((v)-> {
-            Toast.makeText(MainActivity.this, "你点击了我", Toast.LENGTH_LONG).show();
-        } );
-        String url="http://192.168.0.103:8080/api/values/5";
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                HttpUtil.sendOkHttpRequest(url, new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    @Override
-                    public void onResponse(Call call, Response response) throws IOException {
-                        String responseData=response.body().string();
-                        showResponse(responseData);
-                    }
-                });
-            }
-        }).start();
-    }
           private void showResponse(final String response)
           {
               runOnUiThread(()-> {
