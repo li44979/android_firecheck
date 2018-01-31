@@ -20,7 +20,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/home_activity">
             <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -36,6 +38,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".SetOptionActivity"/>
+        <activity android:name=".BaseActivity"
+            android:label="@string/base_activity"/>
+        <activity android:name=".BaseCompanyListActivity"
+            android:label="@string/base_company_list_activity"/>
     </application>
 
 </manifest>

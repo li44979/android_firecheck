@@ -89,7 +89,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         tvVersion = (TextView) findViewById(R.id.tv_version);
-        tvVersion.setText("版本名:" + getVersionName());
+        tvVersion.setText("版本号:" + getVersionName());
         tvProgress = (TextView) findViewById(R.id.tv_progress);// 默认隐藏
         checkVerson();
     }

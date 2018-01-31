@@ -9,21 +9,14 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import java.io.IOException;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Toolbar;
+
 import com.alibaba.fastjson.JSON;
-import java.io.IOException;
 import java.util.List;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
-    TextView tv;
-    Button me;
+
     private static final String TAG = "MainActivity";
 
     private GridView gvHome;
@@ -38,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
 //        List<String> names= Arrays.asList("peter","anna","mike");
 //        Collections.sort(names,(String a,String b)->{
@@ -72,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
                                     int position, long id) {
                 switch (position) {
                     case 0:
-                        // 手机防盗
-                        //showPasswordDialog();
+                        // 基础信息
+                        startActivity(new Intent(MainActivity.this,BaseActivity.class));
                         break;
                     case 3:
                         // 设置中心
@@ -110,9 +105,9 @@ public class MainActivity extends AppCompatActivity {
             View view = View.inflate(MainActivity.this,
                     R.layout.main_list_item, null);
             ImageView ivItem = (ImageView) view.findViewById(R.id.iv_item);
-            TextView tvItem = (TextView) view.findViewById(R.id.tv_item);
+            //TextView tvItem = (TextView) view.findViewById(R.id.tv_item);
 
-            tvItem.setText(mItems[position]);
+            //tvItem.setText(mItems[position]);
             ivItem.setImageResource(mPics[position]);
             return view;
         }
