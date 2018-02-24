@@ -8,9 +8,8 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.util.Log;
-import android.widget.Toolbar;
+import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
 import java.util.List;
@@ -23,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     private String[] mItems = new String[] { "基础信息", "检查标准", "消防检查","检查报告"};
 
-    private int[] mPics = new int[] { R.drawable.base,
-            R.drawable.check, R.drawable.xf,
-            R.drawable.shu};
+    private int[] mPics = new int[] { R.drawable.baseinfo,
+            R.drawable.data, R.drawable.firecheck,
+            R.drawable.checkresult};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +69,15 @@ public class MainActivity extends AppCompatActivity {
                         // 基础信息
                         startActivity(new Intent(MainActivity.this,BaseActivity.class));
                         break;
+                    case 1:
+                        //检查标准
+                        break;
+                    case 2:
+                        //检查主页
+                        startActivity(new Intent(MainActivity.this,CheckIndexActivity.class));
+                        break;
                     case 3:
-                        // 设置中心
+                        // 检查报告
                         startActivity(new Intent(MainActivity.this,
                                 SetOptionActivity.class));
                         break;
@@ -105,9 +111,9 @@ public class MainActivity extends AppCompatActivity {
             View view = View.inflate(MainActivity.this,
                     R.layout.main_list_item, null);
             ImageView ivItem = (ImageView) view.findViewById(R.id.iv_item);
-            //TextView tvItem = (TextView) view.findViewById(R.id.tv_item);
+            TextView tvItem = (TextView) view.findViewById(R.id.tv_item);
 
-            //tvItem.setText(mItems[position]);
+            tvItem.setText(mItems[position]);
             ivItem.setImageResource(mPics[position]);
             return view;
         }

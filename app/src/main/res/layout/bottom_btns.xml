@@ -17,15 +17,15 @@
             android:id="@+id/iv_home"
             android:layout_width="@dimen/bottombar_image_heigh"
             android:layout_height="@dimen/bottombar_image_heigh"
-            android:src="@drawable/xf" />
+            android:src="@drawable/index" />
 
         <TextView
             android:id="@+id/tv_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
             android:text="@string/btn_home"
-            android:textColor="#1B940A"
+            android:textColor="@color/bottom_word"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -41,16 +41,15 @@
             android:id="@+id/iv_address"
             android:layout_width="@dimen/bottombar_image_heigh"
             android:layout_height="@dimen/bottombar_image_heigh"
-            android:src="@drawable/xf" />
+            android:src="@drawable/message" />
 
         <TextView
             android:id="@+id/tv_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
             android:text="@string/btn_message"
-            android:textColor="#ffffff"
-            android:textStyle="bold" />
+            android:textColor="@color/bottom_word" />
     </LinearLayout>
 
     <LinearLayout
@@ -65,16 +64,15 @@
             android:id="@+id/iv_friend"
             android:layout_width="@dimen/bottombar_image_heigh"
             android:layout_height="@dimen/bottombar_image_heigh"
-            android:src="@drawable/xf" />
+            android:src="@drawable/workdesk" />
 
         <TextView
             android:id="@+id/tv_friend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
             android:text="@string/btn_workTable"
-            android:textColor="#ffffff"
-            android:textStyle="bold" />
+            android:textColor="@color/bottom_word" />
     </LinearLayout>
 
     <LinearLayout
@@ -89,16 +87,15 @@
             android:id="@+id/iv_setting"
             android:layout_width="@dimen/bottombar_image_heigh"
             android:layout_height="@dimen/bottombar_image_heigh"
-            android:src="@drawable/xf" />
+            android:src="@drawable/me" />
 
         <TextView
             android:id="@+id/tv_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
             android:text="@string/btn_me"
-            android:textColor="@color/colorWrite"
-            android:textStyle="bold" />
+            android:textColor="@color/bottom_word" />
     </LinearLayout>
 
 </LinearLayout>

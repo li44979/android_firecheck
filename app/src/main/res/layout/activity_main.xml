@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:numColumns="2"
+        android:paddingTop="10dp"
         android:verticalSpacing="10dp" >
     </GridView>
 

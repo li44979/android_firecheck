@@ -42,6 +42,8 @@
             android:label="@string/base_activity"/>
         <activity android:name=".BaseCompanyListActivity"
             android:label="@string/base_company_list_activity"/>
+        <activity android:name=".CheckIndexActivity"
+            android:label="@string/check_index" />
     </application>
 
 </manifest>

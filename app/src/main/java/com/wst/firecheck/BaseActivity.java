@@ -23,9 +23,8 @@ public class BaseActivity extends AppCompatActivity {
 
     private String[] mItems = new String[] { "企业信息", "用户信息","系统设置"};
 
-    private int[] mPics = new int[] { R.drawable.base,
-            R.drawable.check, R.drawable.xf,
-            R.drawable.shu};
+    private int[] mPics = new int[] { R.drawable.company,
+            R.drawable.user, R.drawable.setup};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,11 +45,16 @@ public class BaseActivity extends AppCompatActivity {
                                     int position, long id) {
                 switch (position) {
                     case 0:
-                        // 基础信息
+                        // 企业管理
                         startActivity(new Intent(BaseActivity.this,BaseCompanyListActivity.class));
                         break;
-                    case 3:
-                        // 设置中心
+                    case 1:
+                        // 用户信息
+                        startActivity(new Intent(BaseActivity.this,
+                                SetOptionActivity.class));
+                        break;
+                    case 2:
+                        // 基础设置
                         startActivity(new Intent(BaseActivity.this,
                                 SetOptionActivity.class));
                         break;
@@ -84,9 +88,9 @@ public class BaseActivity extends AppCompatActivity {
             View view = View.inflate(BaseActivity.this,
                     R.layout.main_list_item, null);
             ImageView ivItem = (ImageView) view.findViewById(R.id.iv_item);
-            //TextView tvItem = (TextView) view.findViewById(R.id.tv_item);
+            TextView tvItem = (TextView) view.findViewById(R.id.tv_item);
 
-            //tvItem.setText(mItems[position]);
+            tvItem.setText(mItems[position]);
             ivItem.setImageResource(mPics[position]);
             return view;
         }

@@ -6,4 +6,5 @@
     <color name="colorBlack">#000</color>
     <color name="colorRed">#f00</color>
     <color name="colorWrite">#fff</color>
+    <color name="bottom_word">#fff</color>
 </resources>
