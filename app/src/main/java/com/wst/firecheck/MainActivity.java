@@ -10,8 +10,10 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.util.Log;
 import android.widget.TextView;
-
+import android.util.Log;
+import android.widget.Button;
 import com.alibaba.fastjson.JSON;
+import com.wst.firecheck.model.User;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -112,15 +115,15 @@ public class MainActivity extends AppCompatActivity {
                     R.layout.main_list_item, null);
             ImageView ivItem = (ImageView) view.findViewById(R.id.iv_item);
             TextView tvItem = (TextView) view.findViewById(R.id.tv_item);
-
             tvItem.setText(mItems[position]);
             ivItem.setImageResource(mPics[position]);
             return view;
         }
 
-    }
+    }       
 
-          private void showResponse(final String response)
+    private void showResponse(final String response)
+
           {
               runOnUiThread(()-> {
                     Log.d(TAG, "~"+response+"~");
