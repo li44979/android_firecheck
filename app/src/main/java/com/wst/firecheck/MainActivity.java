@@ -2,16 +2,18 @@ package com.wst.firecheck;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
+import com.wst.firecheck.model.User;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -55,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            };
 //        }.start();
-
         gvHome = (GridView) findViewById(R.id.gv_home);
         gvHome.setAdapter(new HomeAdapter());
         // 设置监听
@@ -112,23 +113,27 @@ public class MainActivity extends AppCompatActivity {
                     R.layout.main_list_item, null);
             ImageView ivItem = (ImageView) view.findViewById(R.id.iv_item);
             TextView tvItem = (TextView) view.findViewById(R.id.tv_item);
-
             tvItem.setText(mItems[position]);
             ivItem.setImageResource(mPics[position]);
             return view;
         }
 
+
     }
 
-          private void showResponse(final String response)
-          {
-              runOnUiThread(()-> {
-                    Log.d(TAG, "~"+response+"~");
-                      List<User> userList= JSON.parseArray(response,User.class);//反序列化
-                     for(User u:userList){
-                         Log.d(TAG, Integer.toString(u.getId()));
-                         Log.d(TAG, u.getName());
-                     }
-              });
-          }
-}
+
+
+    private void showResponse(final String response)
+    {
+        runOnUiThread(()-> {
+            Log.d(TAG, "~"+response+"~");
+            List<User> userList= JSON.parseArray(response,User.class);//反序列化
+            for(User u:userList){
+                Log.d(TAG, Integer.toString(u.getId()));
+                Log.d(TAG, u.getName());
+            }
+        });
+    }
+
+    }
+
