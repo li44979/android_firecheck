@@ -44,6 +44,10 @@
             android:label="@string/base_company_list_activity"/>
         <activity android:name=".CheckIndexActivity"
             android:label="@string/check_index" />
+        <activity android:name=".CompanyInfoActivity"
+            android:label="@string/company_info"/>
+        <activity android:name=".CheckCompanyInfoActivity"
+            android:label="@string/company_info"/>
     </application>
 
 </manifest>

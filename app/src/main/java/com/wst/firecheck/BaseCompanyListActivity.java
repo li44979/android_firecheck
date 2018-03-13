@@ -1,9 +1,12 @@
 package com.wst.firecheck;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -45,6 +48,15 @@ public class BaseCompanyListActivity extends AppCompatActivity {
                     mListView.clearTextFilter();
                 }
                 return false;
+            }
+        });
+
+        //设置ListView的点击事件
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //进入企业信息页面
+                startActivity(new Intent(BaseCompanyListActivity.this,CompanyInfoActivity.class));
             }
         });
     }

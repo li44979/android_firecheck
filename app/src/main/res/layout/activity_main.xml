@@ -6,9 +6,6 @@
     android:orientation="vertical"
     >
 
-    <!--<TextView-->
-        <!--style="@style/TitleStyle"-->
-        <!--android:text="系统主页" />-->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -41,31 +38,5 @@
         android:verticalSpacing="10dp" >
     </GridView>
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:gravity="center">-->
-        <!--<Button-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="主页"-->
-            <!--android:layout_weight="1"/>-->
-        <!--<Button-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="1"-->
-            <!--android:text="公告"/>-->
-        <!--<Button-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="工作台"-->
-            <!--android:layout_weight="1"/>-->
-        <!--<Button-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="我"-->
-            <!--android:layout_weight="1"/>-->
-    <!--</LinearLayout>-->
     <include layout="@layout/bottom_btns" />
 </LinearLayout>

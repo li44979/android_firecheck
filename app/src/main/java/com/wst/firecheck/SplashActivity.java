@@ -318,7 +318,7 @@ public class SplashActivity extends AppCompatActivity {
      * 进入登陆页面
      */
     private void enterLogin() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

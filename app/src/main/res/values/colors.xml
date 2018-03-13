@@ -5,6 +5,15 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorBlack">#000</color>
     <color name="colorRed">#f00</color>
+    <color name="color_Primary_Text">#fff</color>
+    <color name="color_Content_Text_Import">#f00</color>
     <color name="colorWrite">#fff</color>
     <color name="bottom_word">#fff</color>
+    <color name="colorTvTitle">#000</color>
+    <color name="colorTvCont">#a000</color>
+    <!--表单颜色-->
+    <color name="content_color1">#000</color>
+    <color name="line_color">#666</color>
+    <color name="title_bg">#ddd</color>
+    <color name="title_font_color">#222</color>
 </resources>

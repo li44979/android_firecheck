@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this,CheckIndexActivity.class));
                         break;
                     case 3:
-                        // 检查报告
+                        //检查报告
                         startActivity(new Intent(MainActivity.this,
                                 SetOptionActivity.class));
                         break;

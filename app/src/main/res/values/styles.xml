@@ -24,4 +24,11 @@
         <item name="android:textColor">@color/colorWrite</item>
         <item name="android:textSize">20sp</item>
     </style>
+
+    <style name="custum_title_style">
+        <item name="android:background">@color/title_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/title_font_color</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>
