@@ -4,7 +4,7 @@ package com.wst.firecheck.model;
  * Created by li449 on 2018/1/25.
  */
 
-public class User {
+public class User extends BaseModel {
     private int id;
     private  String name;
     public int getId()
