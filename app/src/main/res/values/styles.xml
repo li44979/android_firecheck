@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -10,7 +10,7 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
-    <style name="NoTitle" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="NoTitle" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
@@ -22,6 +22,13 @@
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/colorWrite</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="custum_title_style">
+        <item name="android:background">@color/title_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/title_font_color</item>
         <item name="android:textSize">20sp</item>
     </style>
 </resources>

@@ -2,9 +2,20 @@
 <resources>
 
     <declare-styleable name="SettingItemView">
-        <attr name="title" format="string" />
-        <attr name="desc_on" format="string" />
-        <attr name="desc_off" format="string" />
+    <attr name="title" format="string" />
+    <attr name="desc_on" format="string" />
+    <attr name="desc_off" format="string" />
+</declare-styleable>
+
+    <declare-styleable name="Setting_item_view">
+        <!--是否显示下划线-->
+        <attr name="show_bottomline" format="boolean"/>
+        <!--列表左侧图标-->
+        <attr name="show_leftimg" format = "integer" />
+        <!--中间标题的文字-->
+        <attr name="show_title" format="string" />
+        <!--右侧标示的符号-->
+        <attr name="show_leftChar" format="string"/>
     </declare-styleable>
 
 </resources>

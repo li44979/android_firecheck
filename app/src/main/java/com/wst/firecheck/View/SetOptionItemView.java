@@ -4,15 +4,17 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.wst.firecheck.R;
 
 /**
+ * 自定义组合控件
  * Created by admin on 2018/1/29.
  */
 
-public class SetOptionItemView extends RelativeLayout {
+public class SetOptionItemView extends LinearLayout {
     private static final String NAMESPACE = "http://schemas.android.com/apk/res/com.wst.firecheck";
     private TextView tvTitle;
     private TextView tvDesc;

@@ -1,4 +1,4 @@
-package com.wst.firecheck.model;
+package com.wst.firecheck;
 
 /**
  * Created by li449 on 2018/1/25.

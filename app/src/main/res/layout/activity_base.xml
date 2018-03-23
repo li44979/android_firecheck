@@ -2,11 +2,13 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--<TextView-->
+        <!--style="@style/TitleStyle"-->
+        <!--android:text="基础信息" />-->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -16,18 +18,14 @@
         app:popupTheme="@style/AlertDialog.AppCompat.Light"
         />
 
-    <SearchView
-        android:id="@+id/sv_company"
+    <GridView
+        android:id="@+id/gv_base"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:iconifiedByDefault="false"
-        android:queryHint="请输入搜索内容" />
-
-    <ListView
-        android:id="@+id/lv_company"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:numColumns="3"
+        android:paddingTop="10dp"
+        android:verticalSpacing="10dp"></GridView>
 
     <include layout="@layout/bottom_btns" />
 
