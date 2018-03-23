@@ -31,10 +31,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
             R.drawable.data, R.drawable.firecheck,
             R.drawable.checkresult};
     private int lastSelectedPosition;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
                         break;
                     case 2:
                         //检查主页
-                        startActivity(new Intent(MainActivity.this, CheckIndexActivity.class));
+                        startActivity(new Intent(MainActivity.this,CheckIndexActivity.class));
                         break;
                     case 3:
                         //检查报告
@@ -185,6 +187,19 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     @Override
     public void onTabReselected(int position) {
 
+    }       
+
+    private void showResponse(final String response)
+      {
+          runOnUiThread(()-> {
+                Log.d(TAG, "~"+response+"~");
+                  List<User> userList= JSON.parseArray(response,User.class);//反序列化
+                 for(User u:userList){
+                     Log.d(TAG, Integer.toString(u.getId()));
+                     Log.d(TAG, u.getName());
+                 }
+          });
+      }
     }       
 
     private void showResponse(final String response)

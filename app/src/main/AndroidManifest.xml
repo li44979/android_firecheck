@@ -21,10 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            android:name=".MainActivity"
+            android:label="@string/home_activity">
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -47,6 +45,7 @@
         <activity android:name=".CheckCompanyInfoActivity"
             android:label="@string/company_info"/>
         <activity android:name=".MeActivity"
+            android:label="@string/btn_me">
     </application>
 
 </manifest>
