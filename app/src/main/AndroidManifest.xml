@@ -45,7 +45,7 @@
         <activity android:name=".CheckCompanyInfoActivity"
             android:label="@string/company_info"/>
         <activity android:name=".MeActivity"
-            android:label="@string/btn_me">
+            android:label="@string/btn_me"/>
     </application>
 
 </manifest>
