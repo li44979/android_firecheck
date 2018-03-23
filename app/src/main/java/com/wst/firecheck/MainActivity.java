@@ -18,23 +18,21 @@ import android.widget.ImageView;
 import android.util.Log;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
+import com.wst.firecheck.model.User;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements OnTabSelectedListener{
+public class MainActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener {
 
     private static final String TAG = "MainActivity";
-
     private GridView gvHome;
     private BottomNavigationBar bottomNavigationBar;
-
-    private String[] mItems = new String[]{"基础信息", "检查标准", "消防检查", "检查报告"};
-
-    private int[] mPics = new int[]{R.drawable.baseinfo,
+    private String[] mItems = new String[] { "基础信息", "检查标准", "消防检查","检查报告"};
+    private int[] mPics = new int[] { R.drawable.baseinfo,
             R.drawable.data, R.drawable.firecheck,
             R.drawable.checkresult};
     private int lastSelectedPosition;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
@@ -57,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
 //        fragments = getFragments();
 //        setDefaultFragment();
         /**设置底部菜单的监听*/
-        bottomNavigationBar.setTabSelectedListener(this);
+        setTabSelectedListener.setTabSelectedListener(this);
 
         TextBadgeItem mTextBadgeItem = new TextBadgeItem()
                 .setBorderWidth(4)
@@ -82,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
                 switch (position) {
                     case 0:
                         // 基础信息
-                        startActivity(new Intent(MainActivity.this, BaseActivity.class));
+                        startActivity(new Intent(MainActivity.this,BaseActivity.class));
                         break;
                     case 1:
                         //检查标准
@@ -150,9 +148,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
      * 设置默认的
      */
     private void setDefaultFragment() {
-
-    }
-
+   
     /**
      * 底部菜单选中
      */
@@ -189,6 +185,17 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
     @Override
     public void onTabReselected(int position) {
 
-    }
+    }       
 
+    private void showResponse(final String response)
+      {
+          runOnUiThread(()-> {
+                Log.d(TAG, "~"+response+"~");
+                  List<User> userList= JSON.parseArray(response,User.class);//反序列化
+                 for(User u:userList){
+                     Log.d(TAG, Integer.toString(u.getId()));
+                     Log.d(TAG, u.getName());
+                 }
+          });
+      }
 }

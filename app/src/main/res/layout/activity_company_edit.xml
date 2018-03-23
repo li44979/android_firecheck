@@ -187,6 +187,13 @@
             />
     </LinearLayout>
     <!--按钮-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rlv_company_info"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -206,7 +213,6 @@
             android:textColor="@color/color_Content_Text_Import"
             android:textSize="18dp"/>
     </LinearLayout>
-
 
     <include layout="@layout/bottom_btns"/>
 </LinearLayout>

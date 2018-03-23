@@ -10,3 +10,6 @@
 app/build.gradle
 *.gradle
 app/src/main/AndroidManifest.xml
+app/src/main/AndroidManifest.xml
+app/src/main/java/com/wst/firecheck/MainActivity.java
+app/src/main/res/values/colors.xml
