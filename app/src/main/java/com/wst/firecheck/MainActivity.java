@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.util.Log;
 import android.widget.Button;
 import com.alibaba.fastjson.JSON;
+import com.lidroid.xutils.util.LogUtils;
 import com.wst.firecheck.model.User;
 import java.util.List;
 
@@ -32,33 +33,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-//        List<String> names= Arrays.asList("peter","anna","mike");
-//        Collections.sort(names,(String a,String b)->{
-//            int i=b.compareTo(a);
-//            Log.e(TAG, "ll---l"+i );
-//            return i;
-//        });
-//        new Thread(){
-//            @Override
-//            public void run()
-//            {
-//                String result= Run("http://10.0.2.2:54331/test/get");
-//                Log.d(TAG, "返回结果"+result);
-//                handler.sendEmptyMessage(0);
-//            }
-//            private Handler handler=new Handler(){
-//                @Override
-//                public void handleMessage(Message msg)
-//                {
-//                    super.handleMessage(msg);
-//                }
-//            };
-//        }.start();
-
+        Intent intent=getIntent();
+        User user=JSON.parseObject(intent.getStringExtra("user"),User.class);
+        LogUtils.d(user.getName());//
         gvHome = (GridView) findViewById(R.id.gv_home);
         gvHome.setAdapter(new HomeAdapter());
         // 设置监听
@@ -91,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     class HomeAdapter extends BaseAdapter {
 
         @Override
@@ -120,18 +98,5 @@ public class MainActivity extends AppCompatActivity {
             return view;
         }
 
-    }       
-
-    private void showResponse(final String response)
-
-          {
-              runOnUiThread(()-> {
-                    Log.d(TAG, "~"+response+"~");
-                      List<User> userList= JSON.parseArray(response,User.class);//反序列化
-                     for(User u:userList){
-                         Log.d(TAG, Integer.toString(u.getId()));
-                         Log.d(TAG, u.getName());
-                     }
-              });
-          }
+    }
 }

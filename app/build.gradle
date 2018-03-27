@@ -40,4 +40,5 @@ dependencies {
     compile 'com.alibaba:fastjson:1.1.67.android'
     compile 'org.greenrobot:greendao:3.2.2'
     compile 'com.tsy:myokhttp:1.1.4'
+    compile 'com.victor:lib:1.0.4'
 }
