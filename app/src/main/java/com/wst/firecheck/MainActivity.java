@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
 
         /**底部菜单*/
         bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
-        bottomNavigationBar.setMode(BottomNavigationBar.MODE_SHIFTING);
+        bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
         bottomNavigationBar
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC
                 );
