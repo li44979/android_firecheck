@@ -41,4 +41,5 @@ dependencies {
     compile 'org.greenrobot:greendao:3.2.2'
     compile 'com.tsy:myokhttp:1.1.4'
     compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
+
 }

@@ -14,7 +14,6 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.util.Log;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import java.util.List;
@@ -28,15 +27,17 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
     private int[] mPics = new int[]{R.drawable.baseinfo,
             R.drawable.data, R.drawable.firecheck,
             R.drawable.checkresult};
-    private int lastSelectedPosition;
-    
+    private int lastSelectedPosition;    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        Intent intent=getIntent();
+        User user=JSON.parseObject(intent.getStringExtra("user"),User.class);
         /**底部菜单*/
         bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
@@ -70,12 +71,10 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
 
         gvHome = (GridView) findViewById(R.id.gv_home);
         gvHome.setAdapter(new HomeAdapter());
-        // 设置监听
+        // 设置监听i
         gvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
                 switch (position) {
                     case 0:
                         // 基础信息
@@ -93,22 +92,9 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
                         startActivity(new Intent(MainActivity.this,
                                 SetOptionActivity.class));
                         break;
-
                     default:
                         break;
                 }
-            }
-        });
-    }
-
-
-    private void showResponse(final String response) {
-        runOnUiThread(() -> {
-            Log.d(TAG, "~" + response + "~");
-            List<User> userList = JSON.parseArray(response, User.class);//反序列化
-            for (User u : userList) {
-                Log.d(TAG, Integer.toString(u.getId()));
-                Log.d(TAG, u.getName());
             }
         });
     }
@@ -144,7 +130,9 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
         }
     }
 
-    /**
+    }
+
+/**
      * 底部菜单选中
      */
     @Override

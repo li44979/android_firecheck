@@ -3,12 +3,13 @@
     package="com.wst.firecheck"
     android:versionCode="1"
     android:versionName="1.0">
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,30 +20,39 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/home_activity">
-        </activity>
+            android:label="@string/home_activity"></activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".SplashActivity" android:theme="@style/NoTitle">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/NoTitle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SetOptionActivity"/>
-        <activity android:name=".BaseActivity"
-            android:label="@string/base_activity"/>
-        <activity android:name=".BaseCompanyListActivity"
-            android:label="@string/base_company_list_activity"/>
-        <activity android:name=".CheckIndexActivity"
+        <activity android:name=".SetOptionActivity" />
+        <activity
+            android:name=".BaseActivity"
+            android:label="@string/base_activity" />
+        <activity
+            android:name=".BaseCompanyListActivity"
+            android:label="@string/base_company_list_activity" />
+        <activity
+            android:name=".CheckIndexActivity"
             android:label="@string/check_index" />
-        <activity android:name=".CompanyInfoActivity"
-            android:label="@string/company_info"/>
-        <activity android:name=".CheckCompanyInfoActivity"
-            android:label="@string/company_info"/>
-        <activity android:name=".MeActivity"
-            android:label="@string/btn_me"/>
+        <activity
+            android:name=".CompanyInfoActivity"
+            android:label="@string/company_info" />
+        <activity
+            android:name=".CheckCompanyInfoActivity"
+            android:label="@string/company_info" />
+        <activity
+            android:name=".MeActivity"
+            android:label="@string/btn_me" />
+        <activity android:name=".User_List_Activity"></activity>
     </application>
 
 </manifest>
