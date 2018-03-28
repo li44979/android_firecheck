@@ -1,12 +1,8 @@
 package com.wst.firecheck;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import com.ashokvarma.bottomnavigation.BottomNavigationBar;
-import com.ashokvarma.bottomnavigation.BottomNavigationBar.OnTabSelectedListener;
-import com.ashokvarma.bottomnavigation.BottomNavigationItem;
-import com.ashokvarma.bottomnavigation.ShapeBadgeItem;
-import com.ashokvarma.bottomnavigation.TextBadgeItem;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +14,16 @@ import android.util.Log;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import com.wst.firecheck.model.User;
+import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.ashokvarma.bottomnavigation.BottomNavigationBar.OnTabSelectedListener;
+import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.ashokvarma.bottomnavigation.ShapeBadgeItem;
+import com.ashokvarma.bottomnavigation.TextBadgeItem;
+import com.wst.firecheck.model.User;
 public class MainActivity extends AppCompatActivity implements OnTabSelectedListener{
     private static final String TAG = "MainActivity";
     private GridView gvHome;
     private BottomNavigationBar bottomNavigationBar;
-
     private String[] mItems = new String[]{"基础信息", "检查标准", "消防检查", "检查报告"};
 
     private int[] mPics = new int[]{R.drawable.baseinfo,
@@ -134,8 +135,6 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
      * 设置默认的
      */
     private void setDefaultFragment() {
-
-    }
 /**
      * 底部菜单选中
      */
