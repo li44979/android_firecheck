@@ -8,10 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.alibaba.fastjson.JSON;
 import com.tsy.sdk.myokhttp.MyOkHttp;
 import com.tsy.sdk.myokhttp.response.RawResponseHandler;
 import com.wst.firecheck.Adapter.SingleItemAdapter;
 import com.wst.firecheck.Domin.InfoItem;
+import com.wst.firecheck.model.Company;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +41,10 @@ public class CompanyInfoActivity extends AppCompatActivity {
                 .enqueue(new RawResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, String response) {
-                      //  initItems();
+                        List<Company> companys= JSON.parseArray(response,Company.class);
+                        if(companys.size()>0) {
+                            initItems(companys.get(0));
+                        }
                         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rlv_company_info);
                         LinearLayoutManager layoutManager = new LinearLayoutManager(self);
                         recyclerView.setLayoutManager(layoutManager);
@@ -54,28 +59,28 @@ public class CompanyInfoActivity extends AppCompatActivity {
     }
 
     //企业清单初始化
-    private void initItems() {
-        InfoItem id = new InfoItem("ID","0001");
+    private void initItems(Company company) {
+        InfoItem id = new InfoItem("ID",company.getCompanyId());
         itemList.add(id);
-        InfoItem customNumCode = new InfoItem("单位编号","0001");
+        InfoItem customNumCode = new InfoItem("单位编号",company.getCustomNumCode());
         itemList.add(customNumCode);
-        InfoItem companyName = new InfoItem("企业名称","01001-泽台光学工业");
+        InfoItem companyName = new InfoItem("企业名称",company.getCustomNumCode()+"-"+company.getCompanyName());
         itemList.add(companyName);
-        InfoItem status = new InfoItem("状态","待查");
+        InfoItem status = new InfoItem("状态",company.getStatus());
         itemList.add(status);
-        InfoItem leader =new InfoItem("负责人","某某");
+        InfoItem leader =new InfoItem("负责人",company.getLeader());
         itemList.add(leader);
-        InfoItem mobile =new InfoItem("联系方式","13565006543");
+        InfoItem mobile =new InfoItem("联系方式",company.getMobile());
         itemList.add(mobile);
-        InfoItem checkType =new InfoItem("检查类型","三小场所");
+        InfoItem checkType =new InfoItem("检查类型",company.getCheckType());
         itemList.add(checkType);
-        InfoItem community =new InfoItem("社区","大王山");
+        InfoItem community =new InfoItem("社区",company.getCommunity());
         itemList.add(community);
-        InfoItem industrial =new InfoItem("工业园","万得山");
+        InfoItem industrial =new InfoItem("工业园",company.getIndustrial());
         itemList.add(industrial);
-        InfoItem policeStation =new InfoItem("派出所","南园");
+        InfoItem policeStation =new InfoItem("派出所",company.getPoliceStation());
         itemList.add(policeStation);
-        InfoItem address =new InfoItem("地址","深圳市南山区");
+        InfoItem address =new InfoItem("地址",company.getAddress());
         itemList.add(address);
     }
 }
