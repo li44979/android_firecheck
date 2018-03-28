@@ -51,7 +51,7 @@ public class BaseActivity extends AppCompatActivity {
                     case 1:
                         // 用户信息
                         startActivity(new Intent(BaseActivity.this,
-                                SetOptionActivity.class));
+                                User_List_Activity.class));
                         break;
                     case 2:
                         // 基础设置

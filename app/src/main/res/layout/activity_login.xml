@@ -85,13 +85,6 @@
                 android:background="@color/colorPrimary"
                 android:textSize="22dp"
                 android:textColor="@color/color_Primary_Text"/>
-            <com.victor.loading.rotate.RotateLoading
-                android:id="@+id/rotateloading"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:loading_width="5dp"
-                app:loading_color="#ffffff"
-                android:layout_centerInParent="true"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

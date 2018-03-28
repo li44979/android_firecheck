@@ -8,43 +8,30 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.util.Log;
 import android.widget.TextView;
-import android.util.Log;
-import android.widget.Button;
 import com.alibaba.fastjson.JSON;
 import com.wst.firecheck.model.User;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
-
     private static final String TAG = "MainActivity";
-
     private GridView gvHome;
-
     private String[] mItems = new String[] { "基础信息", "检查标准", "消防检查","检查报告"};
-
     private int[] mPics = new int[] { R.drawable.baseinfo,
             R.drawable.data, R.drawable.firecheck,
             R.drawable.checkresult};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Intent intent=getIntent();
         User user=JSON.parseObject(intent.getStringExtra("user"),User.class);
         gvHome = (GridView) findViewById(R.id.gv_home);
         gvHome.setAdapter(new HomeAdapter());
-        // 设置监听
+        // 设置监听i
         gvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
                 switch (position) {
                     case 0:
                         // 基础信息
@@ -62,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this,
                                 SetOptionActivity.class));
                         break;
-
                     default:
                         break;
                 }
@@ -98,18 +84,5 @@ public class MainActivity extends AppCompatActivity {
             return view;
         }
 
-    }       
-
-    private void showResponse(final String response)
-
-          {
-              runOnUiThread(()-> {
-                    Log.d(TAG, "~"+response+"~");
-                      List<User> userList= JSON.parseArray(response,User.class);//反序列化
-                     for(User u:userList){
-                         Log.d(TAG, Integer.toString(u.getId()));
-                         Log.d(TAG, u.getName());
-                     }
-              });
-          }
+    }
 }
