@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':jdom-2.0.5'

@@ -20,10 +20,6 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/home_activity">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -45,6 +41,8 @@
             android:label="@string/company_info"/>
         <activity android:name=".CheckCompanyInfoActivity"
             android:label="@string/company_info"/>
+        <activity android:name=".MeActivity"
+            android:label="@string/btn_me"/>
     </application>
 
 </manifest>
