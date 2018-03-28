@@ -1,5 +1,4 @@
 package com.wst.firecheck;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -19,7 +18,6 @@ import android.util.Log;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import java.util.List;
-import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity implements OnTabSelectedListener{
 
