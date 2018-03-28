@@ -1,0 +1,26 @@
+Index: app/src/main/java/com/wst/firecheck/BaseCompanyListActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.wst.firecheck;\n\nimport android.content.Context;\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.support.annotation.NonNull;\nimport android.support.annotation.Nullable;\nimport android.support.v7.app.AppCompatActivity;\nimport android.text.TextUtils;\nimport android.view.View;\nimport android.widget.AdapterView;\nimport android.widget.ArrayAdapter;\nimport android.widget.ListView;\nimport android.widget.SearchView;\n\nimport com.alibaba.fastjson.JSON;\nimport com.tsy.sdk.myokhttp.MyOkHttp;\nimport com.tsy.sdk.myokhttp.response.RawResponseHandler;\nimport com.wst.firecheck.Adapter.CompanyListAdapter;\nimport com.wst.firecheck.model.Company;\n\nimport java.util.ArrayList;\nimport java.util.Collection;\nimport java.util.Iterator;\nimport java.util.List;\nimport java.util.ListIterator;\n\n/**\n * Created by admin on 2018/1/31.\n */\n\npublic class BaseCompanyListActivity extends AppCompatActivity {\n   private List<Company> companys=new ArrayList<>();\n    private SearchView mSearchView;\n    private ListView mListView;\n    @Override\n    protected void onCreate(@Nullable Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        Context self=this;\n        setContentView(R.layout.activity_base_company_list);\n        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);\n        setSupportActionBar(toolbar);\n\n        mSearchView = findViewById(R.id.sv_company);\n        mListView = findViewById(R.id.lv_company);\n        mListView.setTextFilterEnabled(true);\n        // 设置搜索文本监听\n        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {\n            // 当点击搜索按钮时触发该方法\n            @Override\n            public boolean onQueryTextSubmit(String query) {\n                return false;\n            }\n\n            // 当搜索内容改变时触发该方法\n            @Override\n            public boolean onQueryTextChange(String newText) {\n                if (!TextUtils.isEmpty(newText)){\n                    mListView.setFilterText(newText);\n                }else{\n                    mListView.clearTextFilter();\n                }\n                return false;\n            }\n        });\n        //设置ListView的点击事件\n        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {\n            @Override\n            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {\n                Company company=companys.get(position);\n                //进入企业信息页面\n                Intent intent=new  Intent(BaseCompanyListActivity.this,CompanyInfoActivity.class);\n                intent.putExtra(\"id\",company.getCompanyId());\n                startActivity(intent);\n            }\n        });\n        MyOkHttp http=new MyOkHttp();\n        http.get()\n                .url(\"http://192.168.0.105:8080/api/Company\")\n                .addParam(\"pageIndex\",\"1\")\n                .addParam(\"pageSize\",\"20\")\n                .tag(this)\n                .enqueue(new RawResponseHandler() {\n                    @Override\n                    public void onSuccess(int statusCode, String response) {\n                        companys= JSON.parseArray(response,Company.class);\n                        CompanyListAdapter adapter=new CompanyListAdapter(BaseCompanyListActivity.this,R.layout.listview_company,companys);\n                        mListView.setAdapter(adapter);\n                    }\n\n                    @Override\n                    public void onFailure(int statusCode, String error_msg) {\n\n                    }\n                });\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/wst/firecheck/BaseCompanyListActivity.java	(revision 67fa27b48c7c39eb2da798833d345060828c4ce9)
++++ app/src/main/java/com/wst/firecheck/BaseCompanyListActivity.java	(revision )
+@@ -14,6 +14,7 @@
+ import android.widget.SearchView;
+ 
+ import com.alibaba.fastjson.JSON;
++import com.lidroid.xutils.util.LogUtils;
+ import com.tsy.sdk.myokhttp.MyOkHttp;
+ import com.tsy.sdk.myokhttp.response.RawResponseHandler;
+ import com.wst.firecheck.Adapter.CompanyListAdapter;
+@@ -90,7 +91,7 @@
+ 
+                     @Override
+                     public void onFailure(int statusCode, String error_msg) {
+-
++                        LogUtils.e(error_msg);
+                     }
+                 });
+ 

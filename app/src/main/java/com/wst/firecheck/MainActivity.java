@@ -1,5 +1,4 @@
 package com.wst.firecheck;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -18,12 +17,9 @@ import android.widget.ImageView;
 import android.util.Log;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
-import java.util.List;
-
+import com.wst.firecheck.model.User;
 public class MainActivity extends AppCompatActivity implements OnTabSelectedListener{
-
     private static final String TAG = "MainActivity";
-
     private GridView gvHome;
     private BottomNavigationBar bottomNavigationBar;
 
@@ -37,9 +33,10 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        Intent intent=getIntent();
+        User user=JSON.parseObject(intent.getStringExtra("user"),User.class);
         /**底部菜单*/
         bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
@@ -133,15 +130,13 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
             return view;
         }
     }
-
     /**
      * 设置默认的
      */
     private void setDefaultFragment() {
 
     }
-
-    /**
+/**
      * 底部菜单选中
      */
     @Override
