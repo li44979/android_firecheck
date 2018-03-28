@@ -2,7 +2,6 @@ package com.wst.firecheck;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-
 /**
  * Created by li449 on 2018/1/25.
  */
