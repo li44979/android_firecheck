@@ -15,6 +15,178 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/AlertDialog.AppCompat.Light"
         />
+    <!--企业自定义编号-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:addStatesFromChildren="true"
+        android:gravity="center_vertical"
+        android:paddingRight="0dip"
+        android:background="@android:drawable/edit_text">
+        <!--
+            TextView label goes at the left.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_CustomNumCode"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textAppearance="?android:attr/textAppearanceLargeInverse"
+            />
+        <EditText
+            android:id="@+id/et_company_CustomNumCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:background="@null"
+            />
+    </LinearLayout>
+    <!--企业名称-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:addStatesFromChildren="true"
+        android:gravity="center_vertical"
+        android:paddingRight="0dip"
+        android:background="@android:drawable/edit_text">
+
+        <!--
+            TextView label goes at the left.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_name"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textAppearance="?android:attr/textAppearanceLargeInverse"
+            />
+        <EditText
+            android:id="@+id/et_company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:background="@null"
+            />
+    </LinearLayout>
+    <!--企业负责人-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:addStatesFromChildren="true"
+        android:gravity="center_vertical"
+        android:paddingRight="0dip"
+        android:background="@android:drawable/edit_text">
+        <!--
+            TextView label goes at the left.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_Leader"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textAppearance="?android:attr/textAppearanceLargeInverse"
+            />
+        <EditText
+            android:id="@+id/et_company_Leader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:background="@null"
+            />
+    </LinearLayout>
+    <!--企业负责人联系方式-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:addStatesFromChildren="true"
+        android:gravity="center_vertical"
+        android:paddingRight="0dip"
+        android:background="@android:drawable/edit_text">
+        <!--
+            TextView label goes at the left.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_Mobile"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textAppearance="?android:attr/textAppearanceLargeInverse"
+            />
+        <EditText
+            android:id="@+id/et_company_Mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:background="@null"
+            android:maxLength="11"
+            android:inputType="number"
+            android:hint="@string/log_mobile"
+            />
+    </LinearLayout>
+    <!--检查类型-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:addStatesFromChildren="true"
+        android:background="@android:drawable/edit_text"
+        android:gravity="center_vertical"
+        android:paddingRight="0dip">
+        <!--
+            TextView label goes at the left.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_CheckType"
+            android:textAppearance="?android:attr/textAppearanceLargeInverse"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <Spinner
+            android:id="@+id/sp_company_checkType"
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/consultation_et_phone"
+            android:layout_alignStart="@+id/consultation_et_phone"
+            android:layout_below="@+id/consultation_et_phone"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:spinnerMode="dialog" />
+    </LinearLayout>
+    <!--企业地址-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:addStatesFromChildren="true"
+        android:gravity="center_vertical"
+        android:paddingRight="0dip"
+        android:background="@android:drawable/edit_text">
+        <!--
+            TextView label goes at the left.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_Address"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textAppearance="?android:attr/textAppearanceLargeInverse"
+            />
+        <EditText
+            android:id="@+id/et_company_Address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="false"
+            android:background="@null"
+            />
+    </LinearLayout>
+    <!--按钮-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rlv_company_info"
@@ -41,7 +213,6 @@
             android:textColor="@color/color_Content_Text_Import"
             android:textSize="18dp"/>
     </LinearLayout>
-
 
     <include layout="@layout/bottom_btns"/>
 </LinearLayout>

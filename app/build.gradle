@@ -40,4 +40,12 @@ dependencies {
     compile 'com.alibaba:fastjson:1.1.67.android'
     compile 'org.greenrobot:greendao:3.2.2'
 
+    //底部导航栏样式BottomNavigationBar
+    compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.3'
+    implementation project(':jdom-2.0.5')
+
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
 }
+
+
