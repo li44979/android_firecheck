@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.util.Log;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import com.wst.firecheck.model.User;
@@ -134,34 +133,34 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
     /**
      * 设置默认的
      */
-    private void setDefaultFragment() {
+    private void setDefaultFragment() {}
 /**
-     * 底部菜单选中
-     */
-    @Override
-    public void onTabSelected(int position) {
-        lastSelectedPosition = position;
-        switch (position) {
-            case 0:
-                //当前页面是主页的情况下，不作动作。
-                Log.i("INFOR", "点击了主页底部主页按钮");
-                break;
-            case 1:
-                //todo 跳转到消息页面
-                Log.i("INFOR", "goto message");
-                break;
-            case 2:
-                //todo 跳转到工作台页面
-                Log.i("INFOR", "goto work");
-                break;
-            case 3:
-                //todo 跳转到 我 页面
-                Log.i("INFOR", "goto me");
-                break;
-            default:
-                break;
+ * 底部菜单选中
+ */
+        @Override
+        public void onTabSelected ( int position){
+            lastSelectedPosition = position;
+            switch (position) {
+                case 0:
+                    //当前页面是主页的情况下，不作动作。
+                    Log.i("INFOR", "点击了主页底部主页按钮");
+                    break;
+                case 1:
+                    //todo 跳转到消息页面
+                    Log.i("INFOR", "goto message");
+                    break;
+                case 2:
+                    //todo 跳转到工作台页面
+                    Log.i("INFOR", "goto work");
+                    break;
+                case 3:
+                    //todo 跳转到 我 页面
+                    Log.i("INFOR", "goto me");
+                    break;
+                default:
+                    break;
+            }
         }
-    }
 
     @Override
     public void onTabUnselected(int position) {

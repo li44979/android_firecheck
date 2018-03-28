@@ -71,7 +71,7 @@ public class BaseCompanyListActivity extends AppCompatActivity {
                 Company company=companys.get(position);
                 //进入企业信息页面
                 Intent intent=new  Intent(BaseCompanyListActivity.this,CompanyInfoActivity.class);
-                intent.putExtra("id",company.getCompanyId());
+                intent.putExtra("id",String.valueOf(company.getCompanyId()));
                 startActivity(intent);
             }
         });
