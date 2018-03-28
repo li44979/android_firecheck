@@ -18,6 +18,7 @@ import com.tsy.sdk.myokhttp.MyOkHttp;
 import com.tsy.sdk.myokhttp.response.RawResponseHandler;
 import com.wst.firecheck.Adapter.CompanyListAdapter;
 import com.wst.firecheck.model.Company;
+import com.wst.firecheck.model.Config;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -76,7 +77,7 @@ public class BaseCompanyListActivity extends AppCompatActivity {
         });
         MyOkHttp http=new MyOkHttp();
         http.get()
-                .url("http://192.168.0.105:8080/api/Company")
+                .url(Config.ApiUrl+"/api/Company/GetCompanyList")
                 .addParam("pageIndex","1")
                 .addParam("pageSize","20")
                 .tag(this)

@@ -1,5 +1,4 @@
 package com.wst.firecheck.Adapter;
-
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,46 +7,45 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
 import com.wst.firecheck.R;
-import com.wst.firecheck.model.Company;
+import com.wst.firecheck.model.User;
+
 import java.util.List;
 
 /**
- * Created by li449 on 2018/3/27.
+ * Created by li449 on 2018/3/28.
  */
 
-public class CompanyListAdapter extends ArrayAdapter<Company> {
+public class UserListAdapter extends ArrayAdapter<User>{
     private  int resourceId;
-    public CompanyListAdapter(Context context,int textViewResourceId,List<Company> companys)
-    {
-        super(context,textViewResourceId,companys);
+    public UserListAdapter(@NonNull Context context,int textViewResourceId, @NonNull List<User> users) {
+        super(context,textViewResourceId, users);
         resourceId=textViewResourceId;
     }
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Company company=getItem(position);
+        User user=getItem(position);
         View view;
-        Company_ViewHolder viewHolder;
+        User_ViewHolder viewHolder;
         if(convertView==null)
         {
             view= LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
-            viewHolder=new Company_ViewHolder();
-            viewHolder.companyId=view.findViewById(R.id.cid);
-            viewHolder.companyName=view.findViewById(R.id.companyName);
+            viewHolder=new User_ViewHolder();
+            viewHolder.name=view.findViewById(R.id.name);
+            viewHolder.mobile=view.findViewById(R.id.mobile);
             view.setTag(viewHolder);
         }else
         {
             view=convertView;
-            viewHolder=(Company_ViewHolder)view.getTag();
+            viewHolder=(User_ViewHolder) view.getTag();
         }
-        viewHolder.companyId.setText(String.valueOf(company.getCompanyId()));
-        viewHolder.companyName.setText(company.getCompanyName());
+        viewHolder.name.setText(user.getName());
+        viewHolder.mobile.setText(user.getMobilePhone());
         return view;
     }
 }
-class Company_ViewHolder{
-    TextView companyId;
-    TextView companyName;
+ class User_ViewHolder{
+    TextView name;
+    TextView mobile;
 }
