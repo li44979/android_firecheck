@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.alibaba.fastjson.JSON;
+import com.lidroid.xutils.util.LogUtils;
 import com.tsy.sdk.myokhttp.MyOkHttp;
 import com.tsy.sdk.myokhttp.response.RawResponseHandler;
 import com.wst.firecheck.Adapter.SingleItemAdapter;
@@ -41,9 +42,9 @@ public class CompanyInfoActivity extends AppCompatActivity {
                 .enqueue(new RawResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, String response) {
-                        List<Company> companys= JSON.parseArray(response,Company.class);
-                        if(companys.size()>0) {
-                            initItems(companys.get(0));
+                        Company company= JSON.parseObject(response,Company.class);
+                        if(company!=null) {
+                            initItems(company);
                         }
                         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rlv_company_info);
                         LinearLayoutManager layoutManager = new LinearLayoutManager(self);
@@ -53,7 +54,7 @@ public class CompanyInfoActivity extends AppCompatActivity {
                     }
                     @Override
                     public void onFailure(int statusCode, String error_msg) {
-
+                        LogUtils.e(error_msg);
                     }
                 });
     }
