@@ -13,8 +13,8 @@ import com.tsy.sdk.myokhttp.MyOkHttp;
 import com.tsy.sdk.myokhttp.response.RawResponseHandler;
 import com.wst.firecheck.Adapter.SingleItemAdapter;
 import com.wst.firecheck.Domin.InfoItem;
+import com.wst.firecheck.model.Config;
 import com.wst.firecheck.model.Company;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class CompanyInfoActivity extends AppCompatActivity {
         String companyId=intent.getStringExtra("id");
         MyOkHttp http=new MyOkHttp();
         http.get()
-                .url("http://192.168.0.105:8080/api/company")
+                .url(Config.ApiUrl+"/api/company/getById")
                 .addParam("id",companyId)
                 .tag(this)
                 .enqueue(new RawResponseHandler() {

@@ -18,6 +18,7 @@ import com.lidroid.xutils.util.LogUtils;
 import com.tsy.sdk.myokhttp.MyOkHttp;
 import com.tsy.sdk.myokhttp.response.JsonResponseHandler;
 import com.tsy.sdk.myokhttp.response.RawResponseHandler;
+import com.wst.firecheck.model.Config;
 import com.wst.firecheck.model.User;
 import com.wst.firecheck.utils.*;
 /**
@@ -72,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         String md5pwd=MD5Utils.encode(password+"fc2017");
         MyOkHttp client=new MyOkHttp();
         client.get()
-                .url("http://192.168.0.105:8080/api/User/Login")
+                .url(Config.ApiUrl+"/api/User/Login")
                 .addParam("userName",email)
                 .addParam("password",md5pwd)
                 .tag(this)

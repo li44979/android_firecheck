@@ -1,5 +1,4 @@
 package com.wst.firecheck;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,32 +10,30 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.util.Log;
 import android.widget.TextView;
-
 import com.alibaba.fastjson.JSON;
+import com.wst.firecheck.model.User;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar.OnTabSelectedListener;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.ashokvarma.bottomnavigation.ShapeBadgeItem;
 import com.ashokvarma.bottomnavigation.TextBadgeItem;
 import com.wst.firecheck.model.User;
-
 public class MainActivity extends AppCompatActivity implements OnTabSelectedListener{
-
     private static final String TAG = "MainActivity";
     private GridView gvHome;
     private BottomNavigationBar bottomNavigationBar;
     private String[] mItems = new String[]{"基础信息", "检查标准", "消防检查", "检查报告"};
+
     private int[] mPics = new int[]{R.drawable.baseinfo,
             R.drawable.data, R.drawable.firecheck,
             R.drawable.checkresult};
-    private int lastSelectedPosition;    
-
+    private int lastSelectedPosition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Intent intent=getIntent();
@@ -74,10 +71,12 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
 
         gvHome = (GridView) findViewById(R.id.gv_home);
         gvHome.setAdapter(new HomeAdapter());
-        // 设置监听i
+        // 设置监听
         gvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
-            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
                 switch (position) {
                     case 0:
                         // 基础信息
@@ -95,13 +94,13 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
                         startActivity(new Intent(MainActivity.this,
                                 SetOptionActivity.class));
                         break;
+
                     default:
                         break;
                 }
             }
         });
     }
-
     /**主页菜单的适配器*/
     class HomeAdapter extends BaseAdapter {
 
@@ -132,7 +131,10 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
             return view;
         }
     }
-
+    /**
+     * 设置默认的
+     */
+    private void setDefaultFragment() {
 /**
      * 底部菜单选中
      */
