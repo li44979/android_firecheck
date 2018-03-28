@@ -23,8 +23,9 @@
     <string name="error_invalid_password">密码太短</string>
     <string name="error_incorrect_password">密码不正确</string>
     <string name="error_field_required">此项为必填项，不允许空</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email  completions."</string>
-    
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
     <!-- 企业登记信息 -->
     <string name="company_name">用户名:</string>
     <string name="company_Leader">负责人:</string>
@@ -32,7 +33,6 @@
     <string name="company_CheckType">检查类型:</string>
     <string name="company_Address">企业地址:</string>
     <string name="company_CustomNumCode">自定义编号:</string>
-
     <!--企业编辑提示-->
     <string name="log_mobile">请输入手机号</string>
 </resources>
