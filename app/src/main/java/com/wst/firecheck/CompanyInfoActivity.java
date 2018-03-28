@@ -60,7 +60,7 @@ public class CompanyInfoActivity extends AppCompatActivity {
 
     //企业清单初始化
     private void initItems(Company company) {
-        InfoItem id = new InfoItem("ID",company.getCompanyId());
+        InfoItem id = new InfoItem("ID",String.valueOf(company.getCompanyId()));
         itemList.add(id);
         InfoItem customNumCode = new InfoItem("单位编号",company.getCustomNumCode());
         itemList.add(customNumCode);

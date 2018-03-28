@@ -1,12 +1,9 @@
 package com.wst.firecheck;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import com.ashokvarma.bottomnavigation.BottomNavigationBar;
-import com.ashokvarma.bottomnavigation.BottomNavigationBar.OnTabSelectedListener;
-import com.ashokvarma.bottomnavigation.BottomNavigationItem;
-import com.ashokvarma.bottomnavigation.ShapeBadgeItem;
-import com.ashokvarma.bottomnavigation.TextBadgeItem;
+
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +12,14 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.alibaba.fastjson.JSON;
-import java.util.List;
+import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.ashokvarma.bottomnavigation.BottomNavigationBar.OnTabSelectedListener;
+import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.ashokvarma.bottomnavigation.ShapeBadgeItem;
+import com.ashokvarma.bottomnavigation.TextBadgeItem;
+import com.wst.firecheck.model.User;
 
 public class MainActivity extends AppCompatActivity implements OnTabSelectedListener{
 
@@ -128,8 +131,6 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectedList
             ivItem.setImageResource(mPics[position]);
             return view;
         }
-    }
-
     }
 
 /**
