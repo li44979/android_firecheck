@@ -66,8 +66,6 @@ public class CheckCompanyInfoActivity extends AppCompatActivity {
         itemList.add(industrial);
         InfoItem policeStation =new InfoItem("派出所","南园");
         itemList.add(policeStation);
-        InfoItem policeStation =new InfoItem("派出所","南园");
-        itemList.add(policeStation);
         InfoItem address =new InfoItem("地址","深圳市南山区");
         itemList.add(address);
     }
