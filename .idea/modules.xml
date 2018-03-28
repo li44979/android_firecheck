@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/android_firecheck.iml" filepath="$PROJECT_DIR$/android_firecheck.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdom-2.0.5/jdom-2.0.5.iml" filepath="$PROJECT_DIR$/jdom-2.0.5/jdom-2.0.5.iml" />
+      <module fileurl="file://C:\Users\li449\Documents\GitHub\android_firecheck\jdom-2.0.5\jdom-2.0.5.iml" filepath="C:\Users\li449\Documents\GitHub\android_firecheck\jdom-2.0.5\jdom-2.0.5.iml" />
     </modules>
   </component>
 </project>

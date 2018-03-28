@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Intent intent=getIntent();
         User user=JSON.parseObject(intent.getStringExtra("user"),User.class);
-        LogUtils.d(user.getName());//
         gvHome = (GridView) findViewById(R.id.gv_home);
         gvHome.setAdapter(new HomeAdapter());
         // 设置监听
